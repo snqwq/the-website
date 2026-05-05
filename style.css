@@ -1,16 +1,43 @@
 body {
-    padding: 0;
-    margin: 0;
-    background-color: rgb(218, 218, 218);
+  padding: 0;
+  margin: 0;
+  background-image: url(./assets/stars.gif);
+  background-repeat: repeat;
+}
+
+@keyframes titleSpin {
+  0% {
+    transform: perspective(5cm) rotateY(0deg) rotateX(0deg);
+  }
+  25% {
+    transform: perspective(10cm) rotateY(90deg) rotateX(50deg);
+  }
+  50% {
+    transform: perspective(1cm) rotateY(180deg) rotateX(-50deg);
+  }
+  75% {
+    transform: perspective(10cm) rotateY(270deg) rotateX(50deg);
+  }
+  100% {
+    transform: perspective(5cm) rotateY(360deg) rotateX(0deg);
+  }
 }
 
 .title {
-    text-align: center;
+  text-align: center;
+  -webkit-text-stroke: 1px rgb(255, 240, 240);
+
+  animation-name: titleSpin;
+  animation-duration: 3s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .centerguy {
-    margin-left: 20%;
-    margin-right: 20%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
