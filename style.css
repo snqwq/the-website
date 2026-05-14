@@ -2,6 +2,7 @@
   --background: rgb(255, 245, 221);
   --background-image: url(./assets/stars2.gif);
   --text-color: #000;
+  --news-color: #ff1e00;
 }
 
 @keyframes titleSpin {
@@ -20,6 +21,22 @@
   100% {
     transform: perspective(10cm) rotateY(360deg);
   }
+}
+@keyframes redFlash {
+  from {
+    color: #ff0000;
+  }
+  to {
+    color: #5c0000;
+  }
+}
+
+marquee {
+  animation-name: redFlash;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 body {
