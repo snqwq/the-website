@@ -5,42 +5,29 @@
     <script>
       eruda.init();
     </script>
+
+    <script src="https://iframe.chat/scripts/main.min.js"></script>
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="webamp" style="height: 100vh">
-      <!-- Webamp will attempt to center itself within this div -->
-    </div>
-    <script type="module">
-      import Webamp from "https://unpkg.com/webamp@^2";
-      const webamp = new Webamp({
-        // windowLayout: {
-        //   main: {
-        //     position: { top: 1, left: 100 },
-        //     shadeMode: false,
-        //     closed: false,
-        //   },
-          // equalizer: {
-          //   position: { top: 230, left: 0 },
-          //   shadeMode: true,
-          //   closed: false,
-          // },
-          // playlist: {
-          //   position: { top: 28, left: 0 },
-          //   shadeMode: false,
-          //   size: { extraHeight: 3, extraWidth: 11 },
-          //   closed: false,
-          // },
-        // },
-      });
-
-      // Returns a promise indicating when it's done loading.
-      webamp.renderWhenReady(document.getElementById("webamp"));
-    </script>
+    <!-- <div id="webamp"></div>
+    <script type="module" src="webamp.js"></script> -->
     <div class="centerguy">
-      <h1 class="title">awesome super cool website</h1>
+      <h1 class="main-title">awesome super cool website</h1>
+      <nav>
+        <a href="./aggregator.html">cool sites</a>
+        <a href="./amp.html">music player</a>
+      </nav>
       <hr />
+      <marquee behavior="" direction="">BREAKING: nothing happening as usual</marquee>
       <p>woahh text</p>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus
+        cupiditate nostrum, consequuntur, quis quos eaque dolor veniam aliquam
+        esse dolorum a minus et impedit iure neque modi. Quas, laboriosam ullam!
+      </p>
+      <h2>hj</h2>
     </div>
   </body>
 </html>
