@@ -1,31 +1,48 @@
-body {
-  padding: 0;
-  margin: 0;
-  background-image: url(./assets/stars.gif);
-  background-repeat: repeat;
+:root {
+  --background: rgb(255, 245, 221);
+  --background-image: url(./assets/stars2.gif);
+  --text-color: #000;
 }
 
 @keyframes titleSpin {
   0% {
-    transform: perspective(5cm) rotateY(0deg) rotateX(0deg);
+    transform: perspective(10cm) rotateY(0deg);
   }
   25% {
-    transform: perspective(10cm) rotateY(90deg) rotateX(50deg);
+    transform: perspective(10cm) rotateY(90deg);
   }
   50% {
-    transform: perspective(1cm) rotateY(180deg) rotateX(-50deg);
+    transform: perspective(10cm) rotateY(180deg);
   }
   75% {
-    transform: perspective(10cm) rotateY(270deg) rotateX(50deg);
+    transform: perspective(10cm) rotateY(270deg);
   }
   100% {
-    transform: perspective(5cm) rotateY(360deg) rotateX(0deg);
+    transform: perspective(10cm) rotateY(360deg);
   }
 }
 
-.title {
+body {
+  padding: 0;
+  margin: 0;
+
+  color: var(--text-color);
+
+  font-family: "Courier New", Courier, monospace;
+
+  background-image: var(--background-image);
+  background-repeat: repeat;
+}
+
+/* .webamp {
+  position: fixed;
+  bottom: 1px;
+  left: 1px;
+} */
+
+.main-title {
   text-align: center;
-  -webkit-text-stroke: 1px rgb(255, 240, 240);
+  -webkit-text-stroke: 1px var(--background);
 
   animation-name: titleSpin;
   animation-duration: 3s;
@@ -34,10 +51,39 @@ body {
   animation-timing-function: linear;
 }
 
+a {
+  text-decoration: none;
+  color: blueviolet;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ff00ff;
+  transition: color 0.3s;
+}
+
+nav {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
 .centerguy {
   margin-left: 20%;
   margin-right: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
   padding: 5px;
-  background-color: rgb(255, 255, 255);
+
+  height: 100vh;
+
+  background-color: var(--background);
+
+  /* border: 0.5rem dashed; */
+  border-radius: 0.5rem;
+
   box-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
