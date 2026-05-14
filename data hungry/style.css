@@ -1,0 +1,31 @@
+code {
+    color: white;
+    font-family: monospace;
+}
+
+.research-button {
+    width: 10rem;
+}
+
+#console-text {
+    color: white;
+}
+
+#count-bar {
+    width: 100%;
+}
+
+#console {
+    background-color: black;
+    width: auto;
+    height: 10rem;
+    padding: 0.5rem;
+}
+
+#input {
+    background-color: black;
+    width: auto;
+    height: 1rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+}

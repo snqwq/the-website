@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>data-hungry</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- might rename to datalust like bloodlust -->
+  </head>
+  <body>
+    <div id="console">
+      <pre id="console-text"></pre>
+    </div>
+
+    <!-- <div id="input">
+      <code id="input-label"></code>
+    </div> -->
+    <hr />
+    <progress id="count-bar" value="0" max="0"></progress>
+    <h1 id="count-label">0 bits</h1>
+    <button onclick="clicked()">execute</button>
+    <button onclick="upgrade('ram')" id="ram-button">upgrade ram ()</button>
+    <p id="thread-label">0 threads</p>
+    <button onclick="buy_thread()" id="thread-button">buy thread</button>
+    <hr />
+    <div id="research">
+      <button class="research-button">
+        <h2></h2>
+        <p></p>
+      </button>
+    </div>
+    <div id="cheats">
+      <button onclick="cheat_bits(1000)">+1000 bits</button>
+      <button onclick="cheat_bits(bits)">x2 bits</button>
+      <button onclick="cheat_bits(-bits)">clear bits</button>
+      <button onclick="console_print('gonk')">gonk</button>
+      <button onclick="cheat_ram(1000)">dedotated wam</button>
+    </div>
+    <pre id="log"></pre>
+    <button id="clearConsole">clear</button>
+    <script>
+      window.addEventListener("error", function (event) {
+        const logger = document.getElementById("log");
+        logger.textContent += `[ERROR] ${event.message} at ${event.filename}:${event.lineno}:${event.colno}\n`;
+      });
+
+      window.addEventListener("unhandledrejection", function (event) {
+        const logger = document.getElementById("log");
+        logger.textContent += `[UNHANDLED REJECTION] ${event.reason}\n`;
+      });
+
+      (function () {
+        var oldLog = console.log;
+        var logger = document.getElementById("log");
+        console.log = function () {
+          for (var i = 0; i < arguments.length; i++) {
+            var output =
+              typeof arguments[i] === "object"
+                ? JSON && JSON.stringify
+                  ? JSON.stringify(arguments[i], null, 2)
+                  : arguments[i]
+                : arguments[i];
+            logger.textContent += output + "\n";
+          }
+          oldLog.apply(console, arguments);
+        };
+      })();
+      function clearConsole() {
+        var logger = document.getElementById("log");
+        logger.textContent = "";
+      }
+      document.getElementById("clearConsole").onclick = clearConsole;
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
