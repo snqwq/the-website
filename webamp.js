@@ -10,6 +10,8 @@ const webamp = new Webamp({
 
 // Returns a promise indicating when it's done loading.
 webamp.renderWhenReady(document.getElementById("webamp")).then(() => {
+  // disabled for right now
+
   // webamp.play();
   // console.log('playing')
 })
